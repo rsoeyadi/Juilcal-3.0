@@ -1,15 +1,8 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import { useSupabaseClient } from "./lib/SupabaseProvider";
-
-export interface Event {
-  id: number;
-  title: string;
-  dateTime: string;
-  venue: string;
-  link: string;
-  imgLink: string;
-}
+import { Event } from "./common/types";
+import EventCard from "./components/events/EventCard";
 
 function App() {
   const supabase = useSupabaseClient();
@@ -26,13 +19,8 @@ function App() {
 
   return (
     <ul>
-      {events?.map((event) => (
-        <>
-          <li key={event.id}>
-            {event.title} || {event.venue}
-          </li>
-          <img src={`/img/${event.id}.jpg`} />
-        </>
+      {events?.map((event: Event) => (
+        <EventCard key={event.id} event={event}></EventCard>
       ))}
     </ul>
   );
