@@ -28,7 +28,9 @@ function App() {
     <ul>
       {events?.map((event) => (
         <>
-          <li key={event.id}>{event.title}</li>
+          <li key={event.id}>
+            {event.title} || {event.venue}
+          </li>
           <img src={`/img/${event.id}.jpg`} />
         </>
       ))}
