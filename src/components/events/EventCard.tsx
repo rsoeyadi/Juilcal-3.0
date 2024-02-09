@@ -17,10 +17,10 @@ const EventCard = ({ event }: EventCardProps) => {
           />
         </div>
         <div className="px-[20px]">
-          <div className="mb-[12px] text-[19px] font-[200] leading-7 transition ease-in-out group-hover:font-[700]">
+          <div className="mb-[12px] text-[20px] font-[200] leading-7 transition ease-in-out group-hover:font-[600]">
             {event.title}
           </div>
-          <div className="mb-[8px] text-[16px] font-[200] text-[#474C58] transition ease-in-out group-hover:font-[700]">
+          <div className="mb-[8px] text-[16px] font-[200] text-[#474C58] transition ease-in-out group-hover:font-[600]">
             {formatDate(event.dateTime)}
           </div>
           <div className="mb-[20px] text-[16px] text-[#999FAA]">
@@ -28,7 +28,7 @@ const EventCard = ({ event }: EventCardProps) => {
           </div>
         </div>
         <div className="mb-[15px]">
-          <span className="ml-[7px] inline-block rounded-[10px] bg-[#F2F4F8] px-[12px] py-[10px] text-sm text-[16px] font-[200] text-[#474C58] transition ease-in-out group-hover:font-[700]">
+          <span className="ml-[7px] inline-block rounded-[10px] bg-[#F2F4F8] px-[12px] py-[10px] text-sm text-[16px] font-[200] text-[#474C58] transition ease-in-out group-hover:font-[600]">
             View more info
           </span>
         </div>
