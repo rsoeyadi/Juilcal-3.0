@@ -9,7 +9,7 @@ const EventCard = ({ event }: EventCardProps) => {
   return (
     <>
       <div className="max-w-sm overflow-hidden">
-        <div className="max-w-[432px]  mb-[24px] px-[20px]">
+        <div className="max-w-[432px]  mb-[24px] px-[20px] mt-[52px]">
           <img
             className="w-full rounded-[20px] h-[288px] object-cover"
             src={`/img/${event.id}.jpg`}
@@ -27,7 +27,7 @@ const EventCard = ({ event }: EventCardProps) => {
             {event.venue}
           </div>
         </div>
-        <div>
+        <div className="mb-[15px]">
           <span className="inline-block rounded-[10px] bg-[#F2F4F8] ml-[7px] px-[12px] py-[10px] text-sm font-[200] text-[#474C58] text-[16px]">
             View more info
           </span>
