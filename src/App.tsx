@@ -18,7 +18,7 @@ function App() {
   }
 
   return (
-    <ul>
+    <ul className="ml-10">
       {events?.map((event: Event) => (
         <EventCard key={event.id} event={event}></EventCard>
       ))}
