@@ -4,9 +4,12 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      future: {
+        hoverOnlyWhenSupported: true,
+      },
       fontFamily: {
-        sans: ['Plus Jakarta Sans']
-      }
+        sans: ["Plus Jakarta Sans"],
+      },
     },
   },
   plugins: [],
