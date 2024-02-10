@@ -1,28 +1,12 @@
-import { useEffect, useState } from "react";
 import "./App.css";
-import { useSupabaseClient } from "./lib/SupabaseProvider";
 import { Event } from "./common/types";
-import EventCard from "./components/events/EventCard";
+import EventsContainer from "./components/events/EventsContainer";
 
 function App() {
-  const supabase = useSupabaseClient();
-  const [events, setEvents] = useState<Event[] | null>(null);
-
-  useEffect(() => {
-    getEvents();
-  }, []);
-
-  async function getEvents() {
-    const { data } = await supabase.from("Events").select();
-    setEvents(data);
-  }
-
   return (
-    <ul className="ml-10">
-      {events?.map((event: Event) => (
-        <EventCard key={event.id} event={event}></EventCard>
-      ))}
-    </ul>
+    <>
+      <EventsContainer></EventsContainer>
+    </>
   );
 }
 
