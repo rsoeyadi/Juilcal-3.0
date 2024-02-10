@@ -16,7 +16,7 @@ const EventCard = ({ event }: EventCardProps) => {
             alt={event.title}
           />
         </div>
-        <div className="px-[20px] h-[150px]">
+        <div className="px-[20px] h-[170px]">
           <div className="mb-[12px] text-[24px] font-[200] leading-7 transition ease-in-out group-hover:font-[600]">
             {event.title}
           </div>
