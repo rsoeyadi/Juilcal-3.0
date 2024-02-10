@@ -6,6 +6,19 @@ interface EventCardProps {
 }
 
 const EventCard = ({ event }: EventCardProps) => {
+  const isTwoLines = event.title.length >= 30;
+  const isThreeLines = event.title.length >= 60;
+
+  function getHeightClass() {
+    if (isThreeLines) {
+      return "h-[160px]";
+    } else if (isTwoLines) {
+      return "h-[150px]";
+    } else {
+      return "h-[140px]";
+    }
+  }
+
   return (
     <>
       <div className="group m-auto md:w-[472px] max-w-md overflow-hidden rounded-[20px] transition ease-in-out hover:bg-[#F2F4F8]">
@@ -16,8 +29,8 @@ const EventCard = ({ event }: EventCardProps) => {
             alt={event.title}
           />
         </div>
-        <div className="px-[20px] h-[170px]">
-          <div className="mb-[12px] text-[24px] font-[200] leading-7 transition ease-in-out group-hover:font-[600]">
+        <div className={`px-[20px] ${getHeightClass()}`}>
+          <div className="mb-[12px] text-[23px] font-[200] leading-7 transition ease-in-out group-hover:font-[600]">
             {event.title}
           </div>
           <div className="mt-3 mb-[8px] text-[16px] font-[200] text-[#474C58] transition ease-in-out group-hover:font-[600]">
