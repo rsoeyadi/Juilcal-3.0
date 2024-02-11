@@ -43,9 +43,11 @@ const EventCard = ({ event }: EventCardProps) => {
         </div>
         <div className="mb-[15px] relative">
           <span className="bg-[#F2F4F8] font-[600] inline-block ml-[7px] mr-[10px] md:font-[200] md:group-hover:font-[600] px-[12px] py-[10px] rounded-[10px] text-[16px] text-[#474C58] text-sm transition ease-in-out">
-            View more info
+            <a href={event.link} target="__blank">
+              View more info
+            </a>
           </span>
-          <div className="absolute left-[135px] bottom-[6px]">
+          <div className="absolute left-[135px] bottom-[0px]">
             <Bookmark />
           </div>
         </div>
