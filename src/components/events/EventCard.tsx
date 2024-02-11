@@ -1,5 +1,6 @@
 import { Event } from "../../common/types";
 import { formatDate } from "../../common/helpers";
+import Bookmark from "../events/Bookmark";
 
 interface EventCardProps {
   event: Event;
@@ -40,10 +41,13 @@ const EventCard = ({ event }: EventCardProps) => {
             {event.venue}
           </div>
         </div>
-        <div className="mb-[15px]">
-          <span className="bg-[#F2F4F8] font-[600] inline-block ml-[7px] md:font-[200] md:group-hover:font-[600] px-[12px] py-[10px] rounded-[10px] text-[16px] text-[#474C58] text-sm transition ease-in-out">
+        <div className="mb-[15px] relative">
+          <span className="bg-[#F2F4F8] font-[600] inline-block ml-[7px] mr-[10px] md:font-[200] md:group-hover:font-[600] px-[12px] py-[10px] rounded-[10px] text-[16px] text-[#474C58] text-sm transition ease-in-out">
             View more info
           </span>
+          <div className="absolute left-[135px] bottom-[6px]">
+            <Bookmark />
+          </div>
         </div>
       </div>
     </>
