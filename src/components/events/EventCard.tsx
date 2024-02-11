@@ -20,6 +20,10 @@ const EventCard = ({ event }: EventCardProps) => {
     }
   }
 
+  const handleBookmarkClick = (e: { preventDefault: () => void; }) => {
+    e.preventDefault(); // Prevent the link from navigating.
+  };
+
   return (
     <>
       <div className="hidden md:block group max-w-md m-auto overflow-hidden rounded-[20px] transition ease-in-out md:hover:bg-[#F2F4F8] md:w-[472px]">
@@ -49,9 +53,11 @@ const EventCard = ({ event }: EventCardProps) => {
               </a>
             </span>
             <div className="absolute left-[135px] bottom-[0px]">
-              <Bookmark />
+              <a href="#" onClick={handleBookmarkClick}>
+                <Bookmark />
+              </a>
             </div>
-          </div>{" "}
+          </div>
         </a>
       </div>
 
