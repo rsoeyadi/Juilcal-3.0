@@ -21,7 +21,7 @@ const EventCard = ({ event }: EventCardProps) => {
         />
       </div>
       <div className="px-[20px]">
-        <div className="max-w-[285px] font-[600] mb-[12px] md:font-[200] md:group-hover:font-[600] text-[22px] leading-7 transition ease-in-out">
+        <div className="max-w-[250px] font-[600] mb-[12px] md:font-[200] md:group-hover:font-[600] text-[22px] leading-7 transition ease-in-out">
           {event.title}
         </div>
         <div className="font-[600] mt-3 mb-[8px] md:font-[200] md:group-hover:font-[600] text-[16px] text-[#474C58] transition ease-in-out">
