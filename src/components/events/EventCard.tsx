@@ -8,7 +8,7 @@ interface EventCardProps {
 
 const EventCard = ({ event }: EventCardProps) => {
   function getHeightClass() {
-    return "h-[240px]";
+    return "h-[280px]";
   }
 
   const handleBookmarkClick = (e: { preventDefault: () => void }) => {
