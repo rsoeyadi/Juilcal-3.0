@@ -7,12 +7,15 @@ interface EventCardProps {
 }
 
 const EventCard = ({ event }: EventCardProps) => {
-  const isTwoLines = event.title.length >= 30;
-  const isThreeLines = event.title.length >= 60;
+  const isTwoLines = event.title.length >= 26;
+  const isThreeLines = event.title.length >= 54;
+  const isFourLines = event.title.length >= 80
 
   function getHeightClass() {
-    if (isThreeLines) {
-      return "h-[210px]";
+    if (isFourLines) {
+      return "h-240px";
+    } else if (isThreeLines) {
+      return "h-[220px]";
     } else if (isTwoLines) {
       return "h-[200px]";
     } else {
