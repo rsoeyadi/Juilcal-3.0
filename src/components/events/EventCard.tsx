@@ -7,20 +7,8 @@ interface EventCardProps {
 }
 
 const EventCard = ({ event }: EventCardProps) => {
-  const isTwoLines = event.title.length >= 26;
-  const isThreeLines = event.title.length >= 54;
-  const isFourLines = event.title.length >= 80
-
   function getHeightClass() {
-    if (isFourLines) {
-      return "h-240px";
-    } else if (isThreeLines) {
-      return "h-[220px]";
-    } else if (isTwoLines) {
-      return "h-[200px]";
-    } else {
-      return "h-[190px]";
-    }
+    return "h-[240px]";
   }
 
   const handleBookmarkClick = (e: { preventDefault: () => void }) => {
@@ -29,7 +17,7 @@ const EventCard = ({ event }: EventCardProps) => {
 
   return (
     <>
-      <div className="hidden md:block group max-w-md m-auto overflow-hidden rounded-[20px] transition ease-in-out md:hover:bg-[#F2F4F8] md:w-[472px]">
+      <div className="hidden md:block group max-w-md m-auto overflow-hidden rounded-[20px] transition ease-in-out md:hover:bg-[#F2F4F8] md:w-[472px] h-">
         <a href={event.link} target="__blank">
           <div className="mb-[24px] mt-[52px] px-[20px]">
             <img
