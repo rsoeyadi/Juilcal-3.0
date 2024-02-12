@@ -10,7 +10,7 @@ const Bookmark = () => {
       }
     >
       <img src={bookmark} alt="" />
-    </button>
+    </button> 
   );
 };
 
