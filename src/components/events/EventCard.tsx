@@ -17,7 +17,7 @@ const EventCard = ({ event }: EventCardProps) => {
 
   return (
     <>
-      <div className="hidden md:block group max-w-md m-auto overflow-hidden rounded-[20px] transition ease-in-out md:hover:bg-[#F2F4F8] md:w-[472px] h-">
+      <div className="hidden md:block group max-w-sm m-auto overflow-hidden rounded-[20px] transition ease-in-out md:hover:bg-[#F2F4F8] md:w-[472px] h-">
         <a href={event.link} target="__blank">
           <div className="mb-[24px] mt-[52px] px-[20px]">
             <img
@@ -52,7 +52,7 @@ const EventCard = ({ event }: EventCardProps) => {
         </a>
       </div>
 
-      <div className="block md:hidden group max-w-md m-auto overflow-hidden rounded-[20px] transition ease-in-out md:hover:bg-[#F2F4F8] md:w-[472px]">
+      <div className="block md:hidden group max-w-sm m-auto overflow-hidden rounded-[20px] transition ease-in-out md:hover:bg-[#F2F4F8] md:w-[472px]">
         <div className="mb-[24px] mt-[52px] px-[20px]">
           <img
             alt={event.title}
