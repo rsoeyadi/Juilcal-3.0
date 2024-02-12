@@ -21,7 +21,7 @@ const EventCard = ({ event }: EventCardProps) => {
         />
       </div>
       <div className="px-[20px]">
-        <div className="max-w-[300px] font-[600] mb-[12px] md:font-[200] md:group-hover:font-[600] text-[22px] leading-7 transition ease-in-out">
+        <div className="max-w-[260px] font-[600] mb-[12px] md:font-[200] md:group-hover:font-[600] text-[22px] leading-7 transition ease-in-out">
           {event.title}
         </div>
         <div className="font-[600] mt-3 mb-[8px] md:font-[200] md:group-hover:font-[600] text-[16px] text-[#474C58] transition ease-in-out">
@@ -48,7 +48,7 @@ const EventCard = ({ event }: EventCardProps) => {
 
   return (
     <>
-      <div className="hidden md:flex flex-col h-full group max-w-sm m-auto overflow-hidden rounded-[20px] transition ease-in-out md:hover:bg-[#F2F4F8] md:w-[472px] h-">
+      <div className="hidden md:flex flex-col h-full group max-w-sm m-auto overflow-hidden rounded-[20px] transition ease-in-out md:hover:bg-[#F2F4F8] md:w-[472px]">
         <a href={event.link} target="__blank">
           {renderCardContent()}
         </a>
