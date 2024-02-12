@@ -12,15 +12,15 @@ const EventCard = ({ event }: EventCardProps) => {
 
   function getHeightClass() {
     if (isThreeLines) {
-      return "h-[160px]";
+      return "h-[210px]";
     } else if (isTwoLines) {
-      return "h-[150px]";
+      return "h-[200px]";
     } else {
-      return "h-[140px]";
+      return "h-[190px]";
     }
   }
 
-  const handleBookmarkClick = (e: { preventDefault: () => void; }) => {
+  const handleBookmarkClick = (e: { preventDefault: () => void }) => {
     e.preventDefault(); // Prevent the link from navigating.
   };
 
@@ -45,17 +45,17 @@ const EventCard = ({ event }: EventCardProps) => {
             <div className="mb-[20px] text-[16px] text-[#999FAA]">
               {event.venue}
             </div>
-          </div>
-          <div className="mb-[15px] relative">
-            <span className="bg-[#F2F4F8] font-[600] inline-block ml-[7px] mr-[10px] md:font-[200] md:group-hover:font-[600] px-[12px] py-[10px] rounded-[10px] text-[16px] text-[#474C58] text-sm transition ease-in-out">
-              <a href={event.link} target="__blank">
-                View more info
-              </a>
-            </span>
-            <div className="absolute left-[135px] bottom-[0px]">
-              <a href="#" onClick={handleBookmarkClick}>
-                <Bookmark />
-              </a>
+            <div className="mb-[15px] relative">
+              <span className="bg-[#F2F4F8] font-[600] inline-block mr-[10px] md:font-[200] md:group-hover:font-[600] px-[12px] py-[10px] rounded-[10px] text-[16px] text-[#474C58] text-sm transition ease-in-out">
+                <a href={event.link} target="__blank">
+                  View more info
+                </a>
+              </span>
+              <div className="absolute left-[135px] bottom-[0px]">
+                <a href="#" onClick={handleBookmarkClick}>
+                  <Bookmark />
+                </a>
+              </div>
             </div>
           </div>
         </a>
@@ -79,15 +79,15 @@ const EventCard = ({ event }: EventCardProps) => {
           <div className="mb-[20px] text-[16px] text-[#999FAA]">
             {event.venue}
           </div>
-        </div>
-        <div className="mb-[15px] relative">
-          <span className="bg-[#F2F4F8] font-[600] inline-block ml-[7px] mr-[10px] md:font-[200] md:group-hover:font-[600] px-[12px] py-[10px] rounded-[10px] text-[16px] text-[#474C58] text-sm transition ease-in-out">
-            <a href={event.link} target="__blank">
-              View more info
-            </a>
-          </span>
-          <div className="absolute left-[135px] bottom-[0px]">
-            <Bookmark />
+          <div className="mb-[15px] relative">
+            <span className="bg-[#F2F4F8] font-[600] inline-block mr-[10px] md:font-[200] md:group-hover:font-[600] px-[12px] py-[10px] rounded-[10px] text-[16px] text-[#474C58] text-sm transition ease-in-out">
+              <a href={event.link} target="__blank">
+                View more info
+              </a>
+            </span>
+            <div className="absolute left-[135px] bottom-[0px]">
+              <Bookmark />
+            </div>
           </div>
         </div>
       </div>
