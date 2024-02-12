@@ -1,10 +1,10 @@
 import "./App.css";
-import EventsContainer from "./components/events/EventsContainer";
+import MainArea from "./components/events/MainArea";
 
 function App() {
   return (
     <>
-      <EventsContainer></EventsContainer>
+      <MainArea></MainArea>
     </>
   );
 }
