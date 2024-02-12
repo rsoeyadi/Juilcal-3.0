@@ -12,31 +12,31 @@ const EventCard = ({ event }: EventCardProps) => {
   };
 
   const renderCardContent = () => (
-    <div className="py-2 rounded-[20px] transition ease-in-out md:hover:bg-[#F2F4F8]">
+    <div className="py-2 rounded-[20px] transition ease-in-out hover:bg-[#F2F4F8] md:hover:bg-[#F2F4F8]">
       <div className="mb-[24px] mt-[24px] px-[20px]">
         <img
           alt={event.title}
-          className="h-[288px] object-cover rounded-[20px] w-full"
+          className="w-full h-[288px] object-cover rounded-[20px]"
           src={`/img/${event.id}.jpg`}
         />
       </div>
       <div className="px-[20px]">
-        <div className="max-w-[250px] font-[600] mb-[12px] md:font-[200] md:group-hover:font-[600] text-[22px] leading-7 transition ease-in-out">
+        <div className="text-[22px] leading-7 font-[600] mb-[12px] max-w-[250px] transition ease-in-out md:font-[200] group-hover:font-[600]">
           {event.title}
         </div>
-        <div className="font-[600] mt-3 mb-[8px] md:font-[200] md:group-hover:font-[600] text-[16px] text-[#474C58] transition ease-in-out">
+        <div className="text-[16px] font-[600] mt-3 mb-[8px] text-[#474C58] transition ease-in-out md:font-[200] group-hover:font-[600]">
           {formatDate(event.dateTime)}
         </div>
-        <div className="mb-[20px] text-[16px] text-[#999FAA]">
+        <div className="text-[16px] mb-[20px] text-[#999FAA]">
           {event.venue}
         </div>
-        <div className="mb-[15px] relative">
-          <span className=" bg-[#F2F4F8] font-[600] inline-block mr-[10px] md:font-[200] md:group-hover:font-[600] px-[12px] py-[10px] rounded-[10px] text-[16px] text-[#474C58] text-sm transition ease-in-out">
+        <div className="relative mb-[15px]">
+          <span className="inline-block mr-[10px] px-[12px] py-[10px] rounded-[10px] bg-[#F2F4F8] text-[16px] font-[600] text-[#474C58] text-sm transition ease-in-out md:font-[200] group-hover:font-[600]">
             <a href={event.link} target="__blank">
               View more info
             </a>
           </span>
-          <div className="absolute left-[135px] bottom-[0px]">
+          <div className="absolute bottom-[0px] left-[135px]">
             <a href="#" onClick={handleBookmarkClick}>
               <Bookmark />
             </a>
@@ -48,13 +48,13 @@ const EventCard = ({ event }: EventCardProps) => {
 
   return (
     <>
-      <div className="hidden md:flex flex-col h-full group max-w-sm m-auto overflow-hidden md:w-[472px]">
+      <div className="hidden md:flex flex-col h-full max-w-sm m-auto overflow-hidden w-[472px] group">
         <a href={event.link} target="__blank">
           {renderCardContent()}
         </a>
       </div>
 
-      <div className="flex flex-col h-full md:hidden group max-w-sm m-auto overflow-hidden rounded-[20px] transition ease-in-out md:hover:bg-[#F2F4F8] md:w-[472px]">
+      <div className="flex flex-col h-full md:hidden max-w-sm m-auto overflow-hidden rounded-[20px] transition ease-in-out w-[472px] hover:bg-[#F2F4F8] group">
         {renderCardContent()}
       </div>
     </>
