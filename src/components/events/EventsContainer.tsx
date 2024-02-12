@@ -19,7 +19,7 @@ function App() {
     <div className="max-w-screen-2xl m-auto">
       <ul
         className="grid grid-flow-row-dense"
-        style={{ gridTemplateColumns: "repeat(auto-fill, minmax(472px, 1fr))" }}
+        style={{ gridTemplateColumns: "repeat(auto-fill, minmax(420px, 1fr))" }}
       >
         {events?.map((event: Event) => (
           <EventCard key={event.id} event={event}></EventCard>
