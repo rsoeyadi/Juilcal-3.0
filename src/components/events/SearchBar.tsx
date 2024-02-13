@@ -1,4 +1,5 @@
 import SearchIcon from "/search.svg";
+import FiltersIcon from "/filter_list.svg";
 
 const SearchBar = () => {
   return (
@@ -14,6 +15,9 @@ const SearchBar = () => {
           placeholder="Search for a Juilliard event"
           required
         />
+        <div className="absolute inset-y-0 end-5 flex items-center ps-3 pointer-events-none">
+          <img className="w-4 h-4 text-gray-500" src={FiltersIcon} />
+        </div>
       </div>
     </form>
   );

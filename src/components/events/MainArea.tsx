@@ -4,8 +4,12 @@ import SearchBar from "./SearchBar";
 const MainArea = () => {
   return (
     <div className="max-w-screen-xl m-auto">
-      <SearchBar />
-      <EventsContainer />
+      <div className="min-w-[402px]">
+        <SearchBar />
+      </div>
+      <div className="max-w-screen-xl">
+        <EventsContainer />
+      </div>
     </div>
   );
 };
