@@ -16,7 +16,7 @@ function App() {
   }
 
   return (
-    <div className="max-w-screen-xl m-auto">
+    <div className="">
       <ul
         className="grid grid-flow-row-dense"
         style={{ gridTemplateColumns: "repeat(auto-fill, minmax(402px, 1fr))" }}

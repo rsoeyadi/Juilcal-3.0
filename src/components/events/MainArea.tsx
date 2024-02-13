@@ -1,9 +1,11 @@
 import EventsContainer from "./EventsContainer";
+import SearchBar from "./SearchBar";
 
 const MainArea = () => {
   return (
-    <div className="">
-      <EventsContainer></EventsContainer>
+    <div className="max-w-screen-xl m-auto">
+      <SearchBar />
+      <EventsContainer />
     </div>
   );
 };
