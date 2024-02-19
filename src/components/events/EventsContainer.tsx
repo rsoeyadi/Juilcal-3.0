@@ -15,13 +15,13 @@ function App() {
   useEffect(() => {
     async function getEvents() {
       try {
-        const searchWords = searchValue.split(" ");
         let query = supabase.from("Events").select();
-
-        searchWords.forEach((word) => {
-          query = query.or(`title.ilike.%${word}%`);
-        });
-
+        if (searchValue != "") {
+          const searchWords = searchValue.split(" ");
+          searchWords.forEach((word) => {
+            query = query.or(`title.ilike.%${word}%`);
+          });
+        }
         const { data, error } = await query;
         if (error) throw error;
 

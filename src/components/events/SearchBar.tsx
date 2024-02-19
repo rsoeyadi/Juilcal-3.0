@@ -23,7 +23,7 @@ const SearchBar = () => {
 
   return (
     <div className="mx-11">
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} noValidate>
         <div className="relative min-w-full">
           <div className="absolute inset-y-0 start-0 flex items-center pl-3 pointer-events-none">
             <img src={SearchIcon} className="w-4 h-4 text-gray-500" />
