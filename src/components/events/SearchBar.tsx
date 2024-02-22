@@ -38,7 +38,7 @@ const SearchBar = () => {
             value={input}
             onChange={handleChange}
           />
-          <div className="absolute inset-y-0 end-0 flex items-center pr-5 pointer-events-none">
+          <div className="hidden absolute inset-y-0 end-0 md:flex items-center pr-5 pointer-events-none">
             <img src={FiltersIcon} className="w-4 h-4 text-gray-500" />
           </div>
         </div>
