@@ -12,7 +12,7 @@ const EventCard = ({ event }: EventCardProps) => {
   };
 
   const renderCardContent = () => (
-    <div className="group py-2 rounded-[20px] transition ease-in-out hover:bg-[#F2F4F8] md:hover:bg-[#F2F4F8]">
+    <div className="group py-2 rounded-[20px] transition ease-in-out md:hover:bg-[#F2F4F8]">
       <div className="mb-[24px] mt-[24px] px-[20px]">
         <img
           alt={event.title}
@@ -54,7 +54,7 @@ const EventCard = ({ event }: EventCardProps) => {
         </a>
       </div>
 
-      <div className="flex flex-col h-full md:hidden max-w-sm m-auto overflow-hidden rounded-[20px] transition ease-in-out w-[472px] hover:bg-[#F2F4F8] group">
+      <div className="flex flex-col h-full md:hidden max-w-sm m-auto overflow-hidden rounded-[20px] transition ease-in-out w-[472px] md:hover:bg-[#F2F4F8] group">
         {renderCardContent()}
       </div>
     </>
