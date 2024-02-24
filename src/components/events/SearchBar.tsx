@@ -22,7 +22,7 @@ const SearchBar = () => {
   };
 
   return (
-    <div className="mx-7">
+    <div className="mx-7 mb-5">
       <form onSubmit={handleSubmit} noValidate>
         <div className="relative min-w-full">
           <div className="absolute inset-y-0 start-0 flex items-center pl-3 pointer-events-none">
