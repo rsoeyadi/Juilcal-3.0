@@ -2,7 +2,7 @@
 import SearchIcon from "/search.svg";
 import FiltersIcon from "/filter_list.svg";
 import { useDispatch } from "react-redux";
-import { updateSearch } from "../../store/search/querySlice";
+import { setSearchQuery } from "../../store/search/searchSlice";
 import { useState } from "react";
 
 const SearchBar = () => {
@@ -13,7 +13,7 @@ const SearchBar = () => {
     /* this is what actually changes the redux state */
     event.preventDefault(); /* to stop the form from reloading the page */
     const newValue = event.target.elements["search-query"].value;
-    dispatch(updateSearch(newValue));
+    dispatch(setSearchQuery(newValue));
   };
 
   const handleChange = (event: any) => {

@@ -3,13 +3,13 @@ import { useSelector } from "react-redux";
 import { Event } from "../../common/types";
 import EventCard from "./EventCard";
 import { useSupabaseClient } from "../../lib/SupabaseProvider";
-import { RootState } from "../../store/search/querySlice";
+import { RootState } from "../../store/search/searchSlice";
 
 function App() {
   const supabase = useSupabaseClient();
   const [events, setEvents] = useState<Event[]>([]);
   const searchValue = useSelector(
-    (state: RootState) => state.query.searchbarValue
+    (state: RootState) => state.search.searchQuery
   );
 
   useEffect(() => {

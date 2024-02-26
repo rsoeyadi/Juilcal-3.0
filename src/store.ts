@@ -1,8 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { querySlice } from "./store/search/querySlice";
+import { searchSlice } from "./store/search/searchSlice";
 
 export default configureStore({
   reducer: {
-    query: querySlice.reducer,
+    search: searchSlice.reducer,
   },
 });
