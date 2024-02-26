@@ -1,6 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { searchSlice } from "./store/search/searchSlice";
-import { bookedmarkedEventsSlice } from "./store/BookmarkedEvents/bookmarkedEvents";
+import { SearchState, searchSlice } from "./store/search/searchSlice";
+import {
+  BookmarkedEventsState,
+  bookedmarkedEventsSlice,
+} from "./store/BookmarkedEvents/bookmarkedEventsSlice";
 
 export default configureStore({
   reducer: {
@@ -8,3 +11,8 @@ export default configureStore({
     bookmarkedEvents: bookedmarkedEventsSlice.reducer,
   },
 });
+
+export interface RootState {
+  search: SearchState;
+  bookmark: BookmarkedEventsState;
+}

@@ -1,9 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-export interface RootState {
-  search: {
-    searchQuery: string;
-  };
+export interface SearchState {
+  searchQuery: string;
+  filters: string[];
+  searchResults: Event[];
 }
 
 export const searchSlice = createSlice({
@@ -12,7 +12,7 @@ export const searchSlice = createSlice({
     searchQuery: "",
     filters: [],
     searchResults: [],
-  },
+  } as SearchState,
   reducers: {
     setSearchQuery: (state, action) => {
       state.searchQuery = action.payload;

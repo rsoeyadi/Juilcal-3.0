@@ -12,7 +12,11 @@ export const bookedmarkedEventsSlice = createSlice({
   reducers: {
     toggleBookmark: (state, action) => {
       const eventId = action.payload;
-      state.events[eventId] = !state.events[eventId];
+      if (state.events[eventId] != null) {
+        state.events[eventId] = !state.events[eventId];
+      } else {
+        state.events[eventId] = true;
+      }
     },
   },
 });

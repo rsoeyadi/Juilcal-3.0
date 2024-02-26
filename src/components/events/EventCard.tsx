@@ -38,7 +38,7 @@ const EventCard = ({ event }: EventCardProps) => {
           </span>
           <div className="absolute bottom-[0px] left-[135px]">
             <a href="#" onClick={handleBookmarkClick}>
-              <Bookmark />
+              <Bookmark eventId={event.id.toString()} />
             </a>
           </div>
         </div>

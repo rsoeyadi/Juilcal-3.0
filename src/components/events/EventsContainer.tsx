@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { Event } from "../../common/types";
 import EventCard from "./EventCard";
 import { useSupabaseClient } from "../../lib/SupabaseProvider";
-import { RootState } from "../../store/search/searchSlice";
+import { RootState } from "../../store";
 
 function App() {
   const supabase = useSupabaseClient();
