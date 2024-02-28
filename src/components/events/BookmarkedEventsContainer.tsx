@@ -36,8 +36,6 @@ const BookmarkedEventsContainer = () => {
       ] /* match overlapping events between all events + bookmarked events */
   );
 
-  console.log(bookmarkedEventsList);
-
   return (
     <div>
       {bookmarkedEventsList.map((event) => (
