@@ -12,7 +12,7 @@ const BookmarkedEventCard = ({ event }: BookmarkedEventCardProps) => {
   };
 
   const renderCardContent = () => (
-    <div className="flex group py-2 rounded-[20px] transition ease-in-out md:hover:bg-[#F2F4F8]">
+    <div className="flex group py-2 px-3 rounded-[20px] transition ease-in-out md:hover:bg-[#F2F4F8]">
       <div className="mb-[24px]">
         <img
           alt={event.title}
@@ -20,7 +20,7 @@ const BookmarkedEventCard = ({ event }: BookmarkedEventCardProps) => {
           src={`/img/${event.id}.jpg`}
         />
       </div>
-      <div className="px-[20px] h-[88px]">
+      <div className="px-[20px]">
         <div className="text-[16px] leading-7 font-bold max-w-[250px] transition ease-in-out md:font-[200] ">
           {event.title}
         </div>
