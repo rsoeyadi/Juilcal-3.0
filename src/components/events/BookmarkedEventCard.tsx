@@ -12,31 +12,29 @@ const BookmarkedEventCard = ({ event }: BookmarkedEventCardProps) => {
   };
 
   const renderCardContent = () => (
-    <div className="group py-2 rounded-[20px] transition ease-in-out md:hover:bg-[#F2F4F8]">
-      <div className="mb-[24px] mt-[24px] px-[20px]">
+    <div className="flex group py-2 rounded-[20px] transition ease-in-out md:hover:bg-[#F2F4F8]">
+      <div className="mb-[24px]">
         <img
           alt={event.title}
-          className="w-full h-[288px] object-cover rounded-[20px]"
+          className="w-[88px] h-[88px] object-cover rounded-[20px]"
           src={`/img/${event.id}.jpg`}
         />
       </div>
-      <div className="px-[20px]">
-        <div className="text-[22px] leading-7 font-[600] mb-[12px] max-w-[250px] transition ease-in-out md:font-[200] group-hover:font-[600]">
+      <div className="px-[20px] h-[88px]">
+        <div className="text-[16px] leading-7 font-bold max-w-[250px] transition ease-in-out md:font-[200] ">
           {event.title}
         </div>
-        <div className="text-[16px] font-[600] mt-3 mb-[8px] text-[#474C58] transition ease-in-out md:font-[200] group-hover:font-[600]">
+        <div className="text-[12px] font-[600] text-[#474C58] transition ease-in-out md:font-[200] ">
           {formatDate(event.dateTime)}
         </div>
-        <div className="text-[16px] mb-[20px] text-[#999FAA]">
-          {event.venue}
-        </div>
-        <div className="relative mb-[15px]">
-          <span className="inline-block mr-[10px] px-[12px] py-[10px] rounded-[10px] bg-[#F2F4F8] text-[16px] font-[600] text-[#474C58] text-sm transition ease-in-out md:font-[200] group-hover:font-[600]">
+        <div className="text-[12px] text-[#999FAA]">{event.venue}</div>
+        <div className="relative">
+          <span className="inline-block mr-[10px] py-[10px] rounded-[10px] text-[16px] font-[600] text-[#474C58] text-sm transition ease-in-out md:font-[200] ">
             <a href={event.link} target="__blank">
               View more info
             </a>
           </span>
-          <div className="absolute bottom-[0px] left-[135px]">
+          <div className="absolute bottom-[2px] left-[114px]">
             <a href="#" onClick={handleBookmarkClick}>
               <Bookmark eventId={event.id.toString()} />
             </a>
@@ -48,13 +46,13 @@ const BookmarkedEventCard = ({ event }: BookmarkedEventCardProps) => {
 
   return (
     <>
-      <div className="hidden md:flex flex-col h-full max-w-sm m-auto overflow-hidden w-[472px]">
+      <div className="hidden md:flex flex-col h-full max-w-sm m-auto overflow-hidden w-[472px] mt-5">
         <a href={event.link} target="__blank">
           {renderCardContent()}
         </a>
       </div>
 
-      <div className="flex flex-col h-full md:hidden max-w-sm m-auto overflow-hidden rounded-[20px] transition ease-in-out w-[472px] md:hover:bg-[#F2F4F8] group">
+      <div className="flex flex-col h-full md:hidden max-w-sm m-auto overflow-hidden rounded-[20px] transition ease-in-out w-[472px] group mt-5">
         {renderCardContent()}
       </div>
     </>
