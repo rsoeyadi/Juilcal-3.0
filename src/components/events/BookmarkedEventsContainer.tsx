@@ -1,5 +1,4 @@
 import { useSelector } from "react-redux";
-import EventCard from "./EventCard";
 import { Event } from "../../common/types";
 import { RootState } from "../../store";
 import { useEffect, useState } from "react";
