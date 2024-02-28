@@ -15,8 +15,8 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
     <SupabaseProvider>
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
-          /* PersistGate delays the rendering of the app's UI until the
-          persisted state has been retrieved and saved to redux. */
+          {/* <PersistGate /> delays the rendering of the app's UI until the
+          persisted state has been retrieved and saved to redux. */}
           <App />
         </PersistGate>
       </Provider>
