@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import OpenBookmark from "/bookmark_border.svg";
 import ClosedBookmark from "/bookmark.svg";
 import { useDispatch, useSelector } from "react-redux";
+
 import {
   BookmarkedEventsState,
   toggleBookmark,
