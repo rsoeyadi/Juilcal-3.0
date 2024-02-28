@@ -1,3 +1,4 @@
+import BookmarkedEventsContainer from "./BookmarkedEventsContainer";
 import EventsContainer from "./EventsContainer";
 import SearchBar from "./SearchBar";
 
@@ -10,6 +11,7 @@ const MainArea = () => {
       <div className="max-w-screen-xl">
         <EventsContainer />
       </div>
+      <BookmarkedEventsContainer />
     </div>
   );
 };

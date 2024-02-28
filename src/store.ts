@@ -26,5 +26,5 @@ export default configureStore({
 
 export interface RootState {
   search: SearchState;
-  bookmark: BookmarkedEventsState;
+  bookmarkedEvents: BookmarkedEventsState;
 }

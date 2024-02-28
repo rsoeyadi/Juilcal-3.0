@@ -5,7 +5,7 @@ import EventCard from "./EventCard";
 import { useSupabaseClient } from "../../lib/SupabaseProvider";
 import { RootState } from "../../store";
 
-function App() {
+function EventsContainer() {
   const supabase = useSupabaseClient();
   const [events, setEvents] = useState<Event[]>([]);
   const searchValue = useSelector(
@@ -49,4 +49,4 @@ function App() {
   );
 }
 
-export default App;
+export default EventsContainer;

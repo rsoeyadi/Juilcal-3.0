@@ -7,6 +7,7 @@ import {
   BookmarkedEventsState,
   toggleBookmark,
 } from "../../store/BookmarkedEvents/bookmarkedEventsSlice";
+import { RootState } from "../../store";
 
 interface BookmarkProps {
   eventId: string;
@@ -17,8 +18,7 @@ const Bookmark = ({ eventId }: BookmarkProps) => {
 
   // relying on the actual redux state to tell us if it's bookmarked or not
   const isBookmarked = useSelector(
-    (state: { bookmarkedEvents: BookmarkedEventsState }) =>
-      state.bookmarkedEvents.events[eventId]
+    (state: RootState) => state.bookmarkedEvents.events[eventId]
   );
 
   // Local state to manage bookmark icon, not from redux
