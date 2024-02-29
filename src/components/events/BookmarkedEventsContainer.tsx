@@ -9,7 +9,7 @@ import BookmarkedEventIcon from "/bookmarked_event_icon.svg";
 const BookmarkedEventsContainer = () => {
   const [events, setEvents] = useState<Event[]>([]);
   const bookmarkedEvents = useSelector(
-    (state: RootState) => state.bookmarkedEvents.events
+    (state: RootState) => state.bookmarkedEvents.bookmarkedEvents
   );
   const supabase = useSupabaseClient();
 
@@ -38,7 +38,7 @@ const BookmarkedEventsContainer = () => {
   );
 
   return (
-    <div className="max-h-[108px]">
+    <div className="max-h-[108px] bg-white z-50 absolute">
       <div className="m-auto max-w-sm grid grid-cols-4 gap-x-3 py-8 px-3 bg-white border border-gray-200 rounded-lg shadow text-[#101828]">
         <img
           src={BookmarkedEventIcon}
@@ -54,6 +54,7 @@ const BookmarkedEventsContainer = () => {
           </p>
         </div>
       </div>
+
       {bookmarkedEventsList.map((event) => (
         <BookmarkedEventCard key={event.id} event={event} />
       ))}

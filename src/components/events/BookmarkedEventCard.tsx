@@ -52,7 +52,7 @@ const BookmarkedEventCard = ({ event }: BookmarkedEventCardProps) => {
         </a>
       </div>
 
-      <div className="flex flex-col h-full md:hidden max-w-sm m-auto overflow-hidden rounded-[20px] transition ease-in-out w-[472px] group mt-5">
+      <div className="bg-white flex flex-col h-full md:hidden max-w-sm m-auto overflow-hidden rounded-[20px] transition ease-in-out w-[472px] group">
         {renderCardContent()}
       </div>
     </>

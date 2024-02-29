@@ -11,7 +11,6 @@ const MainArea = () => {
       <div className="max-w-screen-xl">
         <EventsContainer />
       </div>
-      <BookmarkedEventsContainer />
     </div>
   );
 };

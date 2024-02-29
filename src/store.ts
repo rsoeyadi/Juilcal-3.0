@@ -2,14 +2,14 @@ import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import { SearchState, searchSlice } from "./store/search/searchSlice";
 import {
   BookmarkedEventsState,
-  bookedmarkedEventsSlice,
+  bookmarkedEventsSlice,
 } from "./store/BookmarkedEvents/bookmarkedEventsSlice";
 import storage from "redux-persist/lib/storage";
 import { persistReducer } from "redux-persist";
 
 const reducers = combineReducers({
   search: searchSlice.reducer,
-  bookmarkedEvents: bookedmarkedEventsSlice.reducer,
+  bookmarkedEvents: bookmarkedEventsSlice.reducer,
 });
 
 const persistConfig = {

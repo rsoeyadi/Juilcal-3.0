@@ -15,7 +15,7 @@ const Bookmark = ({ eventId }: BookmarkProps) => {
 
   // relying on the actual redux state to tell us if it's bookmarked or not
   const isBookmarked = useSelector(
-    (state: RootState) => state.bookmarkedEvents.events[eventId]
+    (state: RootState) => state.bookmarkedEvents.bookmarkedEvents[eventId]
   );
 
   // Local state to manage bookmark icon, not from redux
