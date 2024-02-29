@@ -1,36 +1,18 @@
 import { useSelector } from "react-redux";
-import { Event } from "../../common/types";
 import { RootState } from "../../store";
-import { useEffect, useState } from "react";
-import { useSupabaseClient } from "../../lib/SupabaseProvider";
 import BookmarkedEventCard from "./BookmarkedEventCard";
 import BookmarkedEventIcon from "/bookmarked_event_icon.svg";
 
 const BookmarkedEventsContainer = () => {
-  const [events, setEvents] = useState<Event[]>([]);
   const bookmarkedEvents = useSelector(
     (state: RootState) => state.bookmarkedEvents.bookmarkedEvents
   );
-  const supabase = useSupabaseClient();
+  const allEvents = useSelector(
+    (state: RootState) => state.bookmarkedEvents.allEvents
+  );
+  console.log(allEvents);
 
-  useEffect(() => {
-    async function getEvents() {
-      try {
-        let query = supabase.from("Events").select();
-        const { data, error } = await query;
-        if (error) throw error;
-
-        setEvents(data || []);
-      } catch (error) {
-        console.error("Failed to fetch events:", error);
-        setEvents([]);
-      }
-    }
-
-    getEvents();
-  }, [supabase]);
-
-  const bookmarkedEventsList = events.filter(
+  const bookmarkedEventsList = allEvents.filter(
     (event) =>
       bookmarkedEvents[
         event.id

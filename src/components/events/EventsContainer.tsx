@@ -30,7 +30,7 @@ function EventsContainer() {
 
         if (data) {
           setEvents(data);
-          if (flag == 0) {
+          if (flag == 0) { // basically on component mount, we want to call the database, and populate our redux state with these
             dispatch(addEvents(data));
             setFlag(1);
           }

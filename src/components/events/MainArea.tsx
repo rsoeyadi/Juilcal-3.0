@@ -1,4 +1,3 @@
-import BookmarkedEventsContainer from "./BookmarkedEventsContainer";
 import EventsContainer from "./EventsContainer";
 import SearchBar from "./SearchBar";
 

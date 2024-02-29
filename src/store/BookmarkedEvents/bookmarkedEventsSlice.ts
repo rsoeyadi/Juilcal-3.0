@@ -14,7 +14,7 @@ export const bookmarkedEventsSlice = createSlice({
   },
   reducers: {
     addEvents: (state, action) => {
-      console.log(action.payload);
+      state.allEvents = action.payload; // this should be ok because it only runs once (or is supposed to only run once)
     },
     toggleBookmark: (state, action) => {
       const eventId = action.payload;
