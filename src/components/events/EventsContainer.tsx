@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Event } from "../../common/types";
 import EventCard from "./EventCard";
 import { useSupabaseClient } from "../../lib/SupabaseProvider";
 import { RootState } from "../../store";
+import { addEvents } from "../../store/BookmarkedEvents/bookmarkedEventsSlice";
 
 function EventsContainer() {
   const supabase = useSupabaseClient();
@@ -11,6 +12,8 @@ function EventsContainer() {
   const searchValue = useSelector(
     (state: RootState) => state.search.searchQuery
   );
+  const [flag, setFlag] = useState(0);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     async function getEvents() {
@@ -25,7 +28,13 @@ function EventsContainer() {
         const { data, error } = await query;
         if (error) throw error;
 
-        setEvents(data || []);
+        if (data) {
+          setEvents(data);
+          if (flag == 0) {
+            dispatch(addEvents(data));
+            setFlag(1);
+          }
+        }
       } catch (error) {
         console.error("Failed to fetch events:", error);
         setEvents([]);
