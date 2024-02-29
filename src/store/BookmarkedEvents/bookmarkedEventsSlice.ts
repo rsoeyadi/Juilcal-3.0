@@ -1,4 +1,4 @@
-import { PayloadAction, createSlice } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 import { Event as MyEvent } from "../../common/types";
 
 export interface BookmarkedEventsState {
