@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import Header from "./components/Header";
 import MainArea from "./components/events/MainArea";
@@ -6,7 +6,19 @@ import BookmarkedEventsContainer from "./components/events/BookmarkedEventsConta
 
 function App() {
   const [bookmarkedEventsAreOpen, setBookmarkedEventsAreOpen] = useState(false);
+  const [width, setWidth] = useState<number>(window.innerWidth);
 
+  function handleWindowSizeChange() {
+    setWidth(window.innerWidth);
+  }
+  useEffect(() => {
+    window.addEventListener("resize", handleWindowSizeChange);
+    return () => {
+      window.removeEventListener("resize", handleWindowSizeChange);
+    };
+  }, []);
+
+  const isMobile = width <= 768;
   return (
     <>
       <Header
@@ -14,11 +26,14 @@ function App() {
         bookmarkedEventsAreOpen={bookmarkedEventsAreOpen}
       ></Header>
       {bookmarkedEventsAreOpen && (
-        <div className="w-full  z-50">
+        <div className="h-screen z-50">
           <BookmarkedEventsContainer />
         </div>
       )}
-      <MainArea></MainArea>
+      <MainArea
+        bookmarkedEventsAreOpen={bookmarkedEventsAreOpen}
+        isMobile={isMobile}
+      ></MainArea>
     </>
   );
 }
