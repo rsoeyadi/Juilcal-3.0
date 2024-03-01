@@ -3,7 +3,7 @@ import SearchBar from "./SearchBar";
 
 const MainArea = () => {
   return (
-    <div className="max-w-screen-xl m-auto">
+    <div className="relative max-w-screen-xl m-auto">
       <div className="min-w-[402px]">
         <SearchBar />
       </div>

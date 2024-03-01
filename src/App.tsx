@@ -14,7 +14,9 @@ function App() {
         bookmarkedEventsAreOpen={bookmarkedEventsAreOpen}
       ></Header>
       {bookmarkedEventsAreOpen && (
+        <div className="w-full  z-50">
           <BookmarkedEventsContainer />
+        </div>
       )}
       <MainArea></MainArea>
     </>
