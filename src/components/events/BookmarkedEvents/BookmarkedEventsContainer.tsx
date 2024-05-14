@@ -12,34 +12,37 @@ const BookmarkedEventsContainer = () => {
   );
 
   const bookmarkedEventsList = allEvents.filter(
-    (event) =>
-      bookmarkedEvents[
-        event.id
-      ] /* match overlapping events between all events + bookmarked events */
+    (event) => bookmarkedEvents[event.id]
   );
   console.log({ bookmarkedEventsList });
 
   return (
-    <div className="bg-white">
-      <div className="m-auto max-w-sm grid grid-cols-4 gap-x-3 py-8 px-3 bg-white border border-gray-200 rounded-lg shadow text-[#101828]">
+    <div className="bg-white p-4 rounded-lg shadow-md max-w-md mx-auto">
+      <div className="flex items-center space-x-3 pb-4 border-b border-gray-200">
         <img
           src={BookmarkedEventIcon}
           alt="Bookmarked Event"
-          className="m-auto w-[48px] h-[48px] text-gray-500"
+          className="w-12 h-12 text-gray-500"
         />
-        <div className="col-span-3">
-          <h5 className="mb-2 text-2xl font-bold tracking-tight text-[#667085]">
+        <div>
+          <h5 className="text-2xl font-bold tracking-tight text-[#667085]">
             Saved Events
           </h5>
-          <p className="text-gray-700 font-normal dark:text-gray-400">
+          <p className="text-gray-700 font-normal">
             Careful — clearing your browser data will reset your progress!
           </p>
         </div>
       </div>
 
-      {bookmarkedEventsList.map((event) => (
-        <BookmarkedEventCard key={event.id} event={event} />
-      ))}
+      <div className="space-y-4 mt-4">
+        {bookmarkedEventsList.length > 0 ? (
+          bookmarkedEventsList.map((event) => (
+            <BookmarkedEventCard key={event.id} event={event} />
+          ))
+        ) : (
+          <p className="text-gray-500">No saved events found.</p>
+        )}
+      </div>
     </div>
   );
 };
