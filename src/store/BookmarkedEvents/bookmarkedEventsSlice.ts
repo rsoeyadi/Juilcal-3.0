@@ -19,8 +19,10 @@ export const bookmarkedEventsSlice = createSlice({
     toggleBookmark: (state, action) => {
       const eventId = action.payload;
       if (state.bookmarkedEvents[eventId] != null) {
+        console.log("first");
         state.bookmarkedEvents[eventId] = !state.bookmarkedEvents[eventId];
       } else {
+        console.log("second");
         state.bookmarkedEvents[eventId] = true;
       }
     },

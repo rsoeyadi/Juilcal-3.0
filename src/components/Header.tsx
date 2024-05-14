@@ -10,9 +10,12 @@ const Header = ({
   bookmarkedEventsAreOpen,
   setBookmarkedEventsAreOpen,
 }: HeaderProps) => {
-  const handleClick = () => {
+  const handleBookmarkClick = () => {
     setBookmarkedEventsAreOpen(!bookmarkedEventsAreOpen);
     console.log(bookmarkedEventsAreOpen);
+  };
+  const handleFiltersClick = () => {
+    console.log("Filters button clicked")
   };
   return (
     <div className="mx-7 my-[13px]">
@@ -20,11 +23,13 @@ const Header = ({
         Juilcal
       </h1>
       <div className="mt-3 md:hidden flex float-right">
-        <div className="pointer-events-none mr-2">
-          <img src={FiltersIcon} className="w-6 h-6 text-gray-500" />
+        <div className="mr-2">
+          <button onClick={() => handleFiltersClick()}>
+            <img src={FiltersIcon} className="w-6 h-6 text-gray-500" />
+          </button>
         </div>
         <div className="">
-          <button onClick={() => handleClick()}>
+          <button onClick={() => handleBookmarkClick()}>
             <img src={BookmarkIcon} className="w-6 h-6 text-gray-500" />
           </button>
         </div>

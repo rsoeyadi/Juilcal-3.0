@@ -2,7 +2,10 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import Header from "./components/Header";
 import MainArea from "./components/events/MainArea";
-import BookmarkedEventsContainer from "./components/events/BookmarkedEventsContainer";
+import BookmarkedEventsContainer from "./components/events/BookmarkedEvents/BookmarkedEventsContainer";
+import FiltersContainer from "./components/events/FilterPickers/FiltersContainer";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 
 function App() {
   const [bookmarkedEventsAreOpen, setBookmarkedEventsAreOpen] = useState(false);
@@ -21,19 +24,22 @@ function App() {
   const isMobile = width <= 768;
   return (
     <>
-      <Header
-        setBookmarkedEventsAreOpen={setBookmarkedEventsAreOpen}
-        bookmarkedEventsAreOpen={bookmarkedEventsAreOpen}
-      ></Header>
-      {bookmarkedEventsAreOpen && (
-        <div className="h-screen z-50">
-          <BookmarkedEventsContainer />
-        </div>
-      )}
-      <MainArea
+      <LocalizationProvider dateAdapter={AdapterDayjs}>
+        <Header
+          setBookmarkedEventsAreOpen={setBookmarkedEventsAreOpen}
+          bookmarkedEventsAreOpen={bookmarkedEventsAreOpen}
+        ></Header>
+        {bookmarkedEventsAreOpen && (
+          <div className="h-screen z-50 p-2">
+            <BookmarkedEventsContainer />
+          </div>
+        )}
+        {<FiltersContainer />}
+        {/* <MainArea
         bookmarkedEventsAreOpen={bookmarkedEventsAreOpen}
         isMobile={isMobile}
-      ></MainArea>
+      ></MainArea> */}
+      </LocalizationProvider>
     </>
   );
 }

@@ -3,8 +3,8 @@ import OpenBookmark from "/bookmark_border.svg";
 import ClosedBookmark from "/bookmark.svg";
 import { useDispatch, useSelector } from "react-redux";
 
-import { toggleBookmark } from "../../store/BookmarkedEvents/bookmarkedEventsSlice";
-import { RootState } from "../../store";
+import { toggleBookmark } from "../../../store/BookmarkedEvents/bookmarkedEventsSlice";
+import { RootState } from "../../../store";
 
 interface BookmarkProps {
   eventId: string;

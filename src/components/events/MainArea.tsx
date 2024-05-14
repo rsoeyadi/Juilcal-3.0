@@ -10,7 +10,7 @@ const MainArea = ({ bookmarkedEventsAreOpen, isMobile }: MainAreaProps) => {
     <div
       className={`${
         bookmarkedEventsAreOpen && isMobile ? "hidden" : ""
-      } relative max-w-screen-xl m-auto`}
+      }   `}
     >
       <div className="min-w-[402px]">
         <SearchBar />

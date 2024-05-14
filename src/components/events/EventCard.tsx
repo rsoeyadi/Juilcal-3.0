@@ -1,13 +1,16 @@
+import React from "react";
 import { Event } from "../../common/types";
 import { formatDate } from "../../common/helpers";
-import Bookmark from "../events/Bookmark";
+import Bookmark from "./BookmarkedEvents/Bookmark";
 
 interface EventCardProps {
   event: Event;
 }
 
 const EventCard = ({ event }: EventCardProps) => {
-  const handleBookmarkClick = (e: { preventDefault: () => void }) => {
+  const handleBookmarkClick = (
+    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
+  ) => {
     e.preventDefault(); // Prevent the link from navigating.
   };
 
@@ -32,7 +35,7 @@ const EventCard = ({ event }: EventCardProps) => {
         </div>
         <div className="relative mb-[15px]">
           <span className="inline-block mr-[10px] px-[12px] py-[10px] rounded-[10px] bg-[#F2F4F8] text-[16px] font-[600] text-[#474C58] text-sm transition ease-in-out md:font-[200] group-hover:font-[600]">
-            <a href={event.link} target="__blank">
+            <a href={event.link} target="__blank" rel="noopener noreferrer">
               View more info
             </a>
           </span>
@@ -49,7 +52,7 @@ const EventCard = ({ event }: EventCardProps) => {
   return (
     <>
       <div className="hidden md:flex flex-col h-full max-w-sm m-auto overflow-hidden w-[472px]">
-        <a href={event.link} target="__blank">
+        <a href={event.link} target="__blank" rel="noopener noreferrer">
           {renderCardContent()}
         </a>
       </div>

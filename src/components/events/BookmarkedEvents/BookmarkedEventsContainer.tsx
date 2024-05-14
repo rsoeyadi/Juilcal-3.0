@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { RootState } from "../../store";
+import { RootState } from "../../../store";
 import BookmarkedEventCard from "./BookmarkedEventCard";
 import BookmarkedEventIcon from "/bookmarked_event_icon.svg";
 
@@ -10,7 +10,6 @@ const BookmarkedEventsContainer = () => {
   const allEvents = useSelector(
     (state: RootState) => state.bookmarkedEvents.allEvents
   );
-  console.log(allEvents);
 
   const bookmarkedEventsList = allEvents.filter(
     (event) =>
@@ -18,6 +17,7 @@ const BookmarkedEventsContainer = () => {
         event.id
       ] /* match overlapping events between all events + bookmarked events */
   );
+  console.log({ bookmarkedEventsList });
 
   return (
     <div className="bg-white">

@@ -1,5 +1,5 @@
-import { Event } from "../../common/types";
-import { formatDate } from "../../common/helpers";
+import { Event } from "../../../common/types";
+import { formatDate } from "../../../common/helpers";
 import Bookmark from "./Bookmark";
 
 interface BookmarkedEventCardProps {

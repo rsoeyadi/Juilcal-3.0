@@ -12,37 +12,39 @@ function EventsContainer() {
   const searchValue = useSelector(
     (state: RootState) => state.search.searchQuery
   );
-  const [flag, setFlag] = useState(0);
+  const [isInitialLoad, setIsInitialLoad] = useState(true);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    async function getEvents() {
+    const getEvents = async () => {
       try {
         let query = supabase.from("Events").select();
-        if (searchValue != "") {
+
+        if (searchValue) {
           const searchWords = searchValue.split(" ");
           searchWords.forEach((word) => {
             query = query.or(`title.ilike.%${word}%`);
           });
         }
+
         const { data, error } = await query;
         if (error) throw error;
 
         if (data) {
           setEvents(data);
-          if (flag == 0) { // basically on component mount, we want to call the database, and populate our redux state with these
+          if (isInitialLoad) {
             dispatch(addEvents(data));
-            setFlag(1);
+            setIsInitialLoad(false);
           }
         }
       } catch (error) {
         console.error("Failed to fetch events:", error);
         setEvents([]);
       }
-    }
+    };
 
     getEvents();
-  }, [searchValue, supabase]);
+  }, [searchValue, supabase, isInitialLoad, dispatch]);
 
   return (
     <div>
